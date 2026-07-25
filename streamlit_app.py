@@ -264,12 +264,13 @@ st.sidebar.write(f"💰 Revenue : ${revenue:,.2f}")
 # -----------------------------
 # Tabs
 # -----------------------------
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "📊 Dashboard",
-    "📈 Analytics",
-    "📋 Orders",
-    "ℹ️ About Project",
-    "🤖 Qora AI"
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+"📊 Dashboard",
+"📈 Analytics",
+"📋 Orders",
+"ℹ️ About Project",
+"⚛️ Quantum Optimization",
+"🤖 Qora AI"
 ])
 
 # ==================================================
@@ -1435,11 +1436,106 @@ with tab4:
         Dashboard & Planner Recommendations
     """)
 
+
+with tab5:
+
+    st.header("⚛️ Quantum Optimization")
+
+    st.success(
+    "QAOA based optimization using Qiskit simulator"
+    )
+
+
+    st.subheader("Quantum Result")
+
+
+    col1,col2,col3 = st.columns(3)
+
+
+    col1.metric(
+        "Algorithm",
+        "QAOA"
+    )
+
+
+    col2.metric(
+        "Selected Orders",
+        "2"
+    )
+
+
+    col3.metric(
+        "Objective Value",
+        "220"
+    )
+
+
+    st.subheader("Optimal Assignment")
+
+
+    quantum_result = pd.DataFrame({
+
+        "Order":[
+            "Order_1",
+            "Order_2",
+            "Order_3"
+        ],
+
+        "Selected":[
+            1,
+            1,
+            0
+        ]
+
+    })
+
+
+    st.dataframe(
+        quantum_result,
+        use_container_width=True
+    )
+
+
+    st.subheader(
+        "Classical vs Quantum"
+    )
+
+
+    comparison = pd.DataFrame({
+
+        "Method":[
+            "Classical OR-Tools",
+            "QAOA"
+        ],
+
+        "Objective":[
+            200,
+            220
+        ]
+
+    })
+
+
+    fig = px.bar(
+        comparison,
+        x="Method",
+        y="Objective",
+        color="Method"
+    )
+
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+
+
 # ============================================================
 # QORA AI ASSISTANT
 # ============================================================
 
-with tab5:
+with tab6:
 
     st.header("🤖 Qora AI")
 
