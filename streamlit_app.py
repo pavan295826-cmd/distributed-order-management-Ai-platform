@@ -1288,152 +1288,152 @@ with tab4:
     st.header("ℹ️ About Project")
 
     st.markdown("""
-### Project
+        ### Project
 
-This dashboard demonstrates Quantum-inspired Distributed Order Management (DOM) for Nestlé.
+        This dashboard demonstrates Quantum-inspired Distributed Order Management (DOM) for Nestlé.
 
-### Features
+        ### Features
 
-- 📦 Order Optimization
-- 📈 Revenue Analysis
-- 🏭 Plant-wise Performance
-- 📅 Delivery Date Filter
-- 📊 Interactive Charts
-- 📥 Download Results
+        - 📦 Order Optimization
+        - 📈 Revenue Analysis
+        - 🏭 Plant-wise Performance
+        - 📅 Delivery Date Filter
+        - 📊 Interactive Charts
+        - 📥 Download Results
 
-### Technology
+        ### Technology
 
-- Python
-- Streamlit
-- Pandas
-- Plotly
-""")
+        - Python
+        - Streamlit
+        - Pandas
+        - Plotly
+        """)
 
-st.subheader("📐 Mathematical Formulation")
+    st.subheader("📐 Mathematical Formulation")
 
-st.markdown(r"""
-### Objective Function
+    st.markdown(r"""
+        ### Objective Function
 
-The optimization aims to maximize business value while minimizing logistics cost and penalties.
+        The optimization aims to maximize business value while minimizing logistics cost and penalties.
 
-\[
-\max Z =
-\sum Revenue
--
-\sum ShippingCost
--
-\sum Penalty
-\]
+        \[
+        \max Z =
+        \sum Revenue
+        -
+        \sum ShippingCost
+        -
+        \sum Penalty
+        \]
 
----
+        ---
 
-### Decision Variable
+        ### Decision Variable
 
-\[
-x_{ij}=
-\begin{cases}
-1,&\text{if order }i\text{ is assigned to warehouse }j\\
-0,&\text{otherwise}
-\end{cases}
-\]
+        \[
+        x_{ij}=
+        \begin{cases}
+        1,&\text{if order }i\text{ is assigned to warehouse }j\\
+        0,&\text{otherwise}
+        \end{cases}
+        \]
 
----
+        ---
 
-### Constraints
+        ### Constraints
 
-#### 1. One Order → One Warehouse
+        #### 1. One Order → One Warehouse
 
-\[
-\sum_j x_{ij}\le1
-\]
+        \[
+        \sum_j x_{ij}\le1
+        \]
 
-Each customer order can be assigned to only one warehouse.
+        Each customer order can be assigned to only one warehouse.
 
----
+        ---
 
-#### 2. Inventory Constraint
+        #### 2. Inventory Constraint
 
-\[
-\sum_i Demand_i x_{ij}
-\le
-Inventory_j
-\]
+        \[
+        \sum_i Demand_i x_{ij}
+        \le
+        Inventory_j
+        \]
 
-Warehouse inventory cannot be exceeded.
+        Warehouse inventory cannot be exceeded.
 
----
+        ---
 
-#### 3. Warehouse Capacity
+        #### 3. Warehouse Capacity
 
-\[
-\sum_i Volume_i x_{ij}
-\le
-Capacity_j
-\]
+        \[
+        \sum_i Volume_i x_{ij}
+        \le
+        Capacity_j
+        \]
 
-Warehouse capacity must not be exceeded.
+        Warehouse capacity must not be exceeded.
 
----
+        ---
 
-#### 4. Binary Variable
+        #### 4. Binary Variable
 
-\[
-x_{ij}\in\{0,1\}
-\]
+        \[
+        x_{ij}\in\{0,1\}
+        \]
 
-Every assignment is either selected or not selected.
+        Every assignment is either selected or not selected.
 
     """)
-st.subheader("💼 Business Interpretation")
+    st.subheader("💼 Business Interpretation")
 
-st.info("""
-The optimization model recommends the best warehouse for each customer order.
+    st.info("""
+        The optimization model recommends the best warehouse for each customer order.
 
-The objective is to:
+        The objective is to:
 
-• Maximize revenue
+        • Maximize revenue
 
-• Minimize shipping cost
+        • Minimize shipping cost
 
-• Reduce penalty cost
+        • Reduce penalty cost
 
-• Respect inventory availability
+        • Respect inventory availability
 
-• Respect warehouse capacity
+        • Respect warehouse capacity
 
-• Improve overall fill rate
+        • Improve overall fill rate
 
-The final recommendation balances operational constraints with business value.
-""")
-st.subheader("🔄 Optimization Workflow")
+        The final recommendation balances operational constraints with business value.
+    """)
+    st.subheader("🔄 Optimization Workflow")
 
-st.code("""
-Customer Orders
-        │
-        ▼
-Inventory Check
-        │
-        ▼
-Capacity Check
-        │
-        ▼
-Shipping Cost Evaluation
-        │
-        ▼
-Penalty Calculation
-        │
-        ▼
-Classical Optimization (OR-Tools)
-        │
-        ▼
-Quantum Formulation (QAOA Ready)
-        │
-        ▼
-Best Warehouse Assignment
-        │
-        ▼
-Dashboard & Planner Recommendations
-""")
+    st.code("""
+        Customer Orders
+             │
+             ▼
+        Inventory Check
+             │
+             ▼
+        Capacity Check
+             │
+             ▼
+        Shipping Cost Evaluation
+             │
+             ▼
+        Penalty Calculation
+             │
+             ▼
+        Classical Optimization (OR-Tools)
+             │
+             ▼
+        Quantum Formulation (QAOA Ready)
+             │
+             ▼
+        Best Warehouse Assignment
+             │
+             ▼
+        Dashboard & Planner Recommendations
+    """)
 
 # ============================================================
 # QORA AI ASSISTANT
